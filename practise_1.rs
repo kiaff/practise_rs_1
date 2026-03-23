@@ -228,7 +228,48 @@ fn main(){
 }
 
 ________________________________________________________________________________
+--most important code in this topic 
+enum Status {
+    Online,
+    Offline,
+    Away,
+}
 
+struct User {
+    name: String,
+    status: Status,
+}
+
+impl User {
+    fn show_status(&self) {
+        match self.status {
+            Status::Online => println!("{} is Online", self.name),
+            Status::Offline => println!("{} is Offline", self.name),
+            Status::Away => println!("{} is Away", self.name),
+        }
+    }
+}
+
+fn main() {
+    let user1 = User {
+        name: String::from("Noob"),
+        status: Status::Online,
+    };
+
+    let user2 = User {
+        name: String::from("home"),
+        status: Status::Offline,
+    };
+
+    let user3 = User {
+        name: String::from("Guy"),
+        status: Status::Away,
+    };
+
+    user1.show_status();
+    user2.show_status();
+    user3.show_status();
+}
 
 
 
