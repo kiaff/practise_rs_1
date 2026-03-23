@@ -60,6 +60,33 @@ fn main() {
 the simple thing is here s is a &str means that s is borrowing the string ...ok but form where does it borrowing ? 
 simply s is just taking the reference of the words "hello world" ..and explicit type is &'static str 
 
+__________________________________________________________
+#[derive(Debug)]
+struct Rec{
+    len  : i32 ,
+    wid  : i32 ,
+}
+impl Rec{
+    fn area(&self)-> i32{
+        if self.wid <= 0{
+            eprintln!("Please try with a valid width !") ;
+            return 0 as i32 ;
+        }else{
+            return self.len * self.wid  ;
+        }
+    }
+}
+fn main(){
+    let rec1 : Rec = Rec{
+        len : 32 ,
+        wid : 342 ,
+    } ;
+    println!("Rec1 is {:?}" , rec1) ;
+    let area : i32 = rec1.area() ;
+    println!("The area of the  Rectangle is {:?}" , area) ;
+}
+
+
 
 
 
