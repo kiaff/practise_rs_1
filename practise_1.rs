@@ -162,7 +162,16 @@ fn main(){
 }
 
 __________________________________________________________________
-
+fn main(){
+    let mut word : String = String::from("Hello Noob") ;
+    let big_word : &str = give_ref_not_own(&mut word) ;
+    println!("The big word is {:?}" , big_word) ;
+}
+fn give_ref_not_own(value : &mut String)-> &str{
+    value.push_str(" Again Hello world") ;
+    return value.as_str() ;
+}
+//simple but very much tricky ; 
 
 
 
