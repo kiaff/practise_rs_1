@@ -50,7 +50,15 @@ fn main(){
 }
 //the word veriable will be valid till the end of the programme .....
 ___________
+fn main() {
+    let s: &str = "Hello World";
 
+    println!("{}", s);
+}
+
+
+the simple thing is here s is a &str means that s is borrowing the string ...ok but form where does it borrowing ? 
+simply s is just taking the reference of the words "hello world" ..and explicit type is &'static str 
 
 
 
