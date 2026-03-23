@@ -172,7 +172,21 @@ fn give_ref_not_own(value : &mut String)-> &str{
     return value.as_str() ;
 }
 //simple but very much tricky ; 
-
+______________________________________________________
+fn main(){
+    let string_data : String = String::from("Hello Arch") ;
+    let str_data : &str = "hello noob";
+    print_string(&string_data) ;
+    print_str(&str_data) ;
+    //both string_data and str_data also alive because we just gave the reference only ; 
+}
+fn print_string(value : &String){
+    println!("The string value is {:?}" , value) ;
+}
+fn print_str(value : &str){
+    println!("The &str value is {:?}" , value) ;
+}
+_______________________________________________________
 
 
 
