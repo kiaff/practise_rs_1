@@ -114,7 +114,54 @@ fn main(){
 
 
 ___________________________________________________________
+enum Data{
+    Data1(i32 , i32) ,
+    Data2(String , String) ,
+}
+fn main(){
+    let data1 : Data = Data::Data1(12 , 22) ;
+    let data2 : Data = Data::Data2(String::from("Arch") , String::from("Linux")) ;
+    match data1{
+        Data::Data1(value1 , value2) => println!("First int{:?} and second int is {:?}" , value1 , value2) ,
+        Data::Data2(value1 , value2) => println!("First string is {:?} and second string is {:?}" , value1 , value2) ,
+    }
+    match data2{
+        Data::Data1(value1 , value2) => println!("First int is {:?} and second int is {:?}" , value1 , value2) ,
+        Data::Data2(value1 , value2) => println!("First string is {:?} and second string is {:?}" , value1 , value2) ,
+    }
+}
+//maybe its a touple enum ?
+__________________________________________________________
+#[derive(Debug)]
+struct Counter{
+    value : i32 ,
+}
+impl Counter{
+    fn inc(&mut self)-> i32{
+        self.value = self.value + 1 ;
+        println!("Value is now increased as {:?}" , self.value) ;
+        return 0 as i32 ;
+    }
+    fn dec(&mut self)-> i32{
+        self.value = self.value - 1 ;
+        println!("Value is now decreased as {:?}" , self.value) ;
+        return 0 as i32 ;
+    }
+    fn print_value(&self){
+        println!("the value is {:?}" , self.value) ;
+    }
+}
+fn main(){
+    let mut value1 : Counter = Counter{
+        value : 22 ,
+    } ;
+    value1.inc() ;
+    value1.dec() ;
+    value1.print_value() ;
+    println!("Value 1 is {:?}" , value1) ;
+}
 
+__________________________________________________________________
 
 
 
