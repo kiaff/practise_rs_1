@@ -35,7 +35,21 @@ fn main(){
         DataSet::Data2(value) => println!("The second data is a 32 bit intiger is {:?}" , value) ,
     }
 }
+________________
+string and str
 
+fn main(){
+    let mut string :  String =  String::from("Hello ") ;
+    string.push_str(" world") ;
+    println!("the string is {:?}" , string) ;
+}
+______________________
+fn main(){
+    let word : &'static str = "hello world" ;
+    println!("This is a borrowed string slice type {:?}" , word) ;
+}
+//the word veriable will be valid till the end of the programme .....
+___________
 
 
 
