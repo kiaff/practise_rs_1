@@ -187,7 +187,34 @@ fn print_str(value : &str){
     println!("The &str value is {:?}" , value) ;
 }
 _______________________________________________________
+--trash code---
+#[derive(Debug)]
+enum Role{
+    Admin ,
+    User ,
+}
+#[derive(Debug)]
+struct Person{
+    name : String ,
+    status : Role ,
+}
+fn main(){
+    let person1 : Person = Person{
+        name : String::from("Boss") ,
 
+
+        status : Role::Admin ,
+    } ;
+    println!("Person 1 -> name is {:?} and status is {:?}" , person1.name , person1.status) ;
+    let person2 : Person = Person{
+        name : String::from("noob user") ,
+        status : Role::User ,
+    }  ;
+    println!("Person 2 -> name is {:?} and status is {:?}" , person2.name , person2.status) ;
+}
+
+
+_____________________________________________________________________________
 
 
 
