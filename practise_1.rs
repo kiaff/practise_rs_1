@@ -215,7 +215,19 @@ fn main(){
 
 
 _____________________________________________________________________________
+fn main(){
+    let number = 10 ;
+    match number{
+        1..=5 => println!("This is too small !") ,
+        6..=10 => println!("target is in this range of 6..10") ,
+        x if x > 10 => println!("This is too big number ") ,
+        _ => {
+            eprintln!("Unknown !") ;
+        }
+    }
+}
 
+________________________________________________________________________________
 
 
 
