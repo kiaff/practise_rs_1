@@ -85,8 +85,35 @@ fn main(){
     let area : i32 = rec1.area() ;
     println!("The area of the  Rectangle is {:?}" , area) ;
 }
+____________________________________
+enum Status{
+    Active ,
+    Inactive ,
+}
+impl Status{
+    fn print_status_1(&self){
+        match self{
+            Status::Active => println!("He is active !") ,
+            Status::Inactive => println!("He is incative !") ,
+        }
+    }
+    fn print_status_2(&self){
+        match self{
+            Status::Active => println!("He is active !") ,
+            Status::Inactive => println!("He is not active !") ,
+        }
+    }
+}
+
+fn main(){
+    let status_1 : Status = Status::Active ;
+    let status_2 : Status = Status::Inactive ;
+    status_1.print_status_1() ;
+    status_2.print_status_2() ;
+}
 
 
+___________________________________________________________
 
 
 
