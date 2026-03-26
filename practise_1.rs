@@ -271,10 +271,34 @@ fn main() {
     user3.show_status();
 }
 
+______________________________________________________________
 
-
-
-
+#[derive(Debug)]
+enum State{
+    Good ,
+    Bad ,
+}
+fn print_state(state : &State)-> u8 {
+    match state{
+        State::Good => {
+            println!("Hello Kohee and I think you are good but noob") ;
+            return 0 as u8 ;
+        } 
+        State::Bad => {
+            println!("Hello I think you are bad !") ;                                                                                 
+            return 0 as u8 ;                                                                                                          
+        }                                                                                                                             
+    }                                                                                                                                 
+}                                                                                                                                     
+fn main(){                                                                                                                            
+    let user1 : State = State::Good  ;                                                                                                
+    print_state(&user1) ;                                                                                                             
+    let user2 : State = State::Bad  ;                                                                                                 
+    print_state(&user2) ;                                                                                                             
+    println!("User 1 is {:?}" , user1) ;                                                                                              
+    println!("User 2 is {:?}" , user2) ;                                                                                              
+}    
+_________________________________________________
 
 
 
