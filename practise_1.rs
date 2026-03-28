@@ -299,6 +299,15 @@ fn main(){
     println!("User 2 is {:?}" , user2) ;                                                                                              
 }    
 _________________________________________________
+fn return_num(num1 : i32 , num2 : i32)-> (i32 , i32){
+    return (num1 as i32 , num2 as i32) ; 
+}
+fn main(){
+    let number1 : i32 = 10 ;
+    let number2 : i32 =32 ;
+    let (res1 , res2) : (i32 , i32) = return_num(number1 , number2) ;
+    println!("Result 1 is {:?} and result 2 is {:?}" , res1 , res2)
+}
 
 
 
