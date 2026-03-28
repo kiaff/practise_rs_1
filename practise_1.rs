@@ -374,7 +374,32 @@ examples :
           &Option<i32> = &var ;
 
 
+___________________________________________________
+fn main() {
+    let value: i32 = 50;
+    let some: Option<&i32> = Some(&value);
+    let none: Option<&i32> = None;
+    let res1: Option<i32> = get_it(&some);
+    let res2: Option<i32> = get_it(&none);
+    println!("res1 = {:?}, res2 = {:?}", res1, res2);
+    println!("original value = {}", value);
+}
 
+fn get_it(input: &Option<&i32>) -> Option<i32> {
+    match input {
+        Some(inner_ref) => {
+            let first_deref: &i32 = *inner_ref;
+            let actual_value: i32 = *first_deref;
+
+            let new_value: i32 = actual_value + 200;
+            Some(new_value)
+        }
+
+        None => {
+            None
+        }
+    }
+}
 
 
 
