@@ -309,6 +309,69 @@ fn main(){
     println!("Result 1 is {:?} and result 2 is {:?}" , res1 , res2)
 }
 
+_______________________________________
+fn main(){
+    let number : Option<i32> = Some(21) ;
+    let none : Option<i32> = None ;
+    let res1 : Option<i32> = get_it(number) ;
+    let res2 : Option<i32> = get_it(none) ;
+    println!("The result 1 is {:?} and result 2 is {:?}" , res1 , res2) ;  
+}
+fn get_it(value : Option<i32>)-> Option<i32>{
+    match value{
+        Some(val)=>{
+            let new_value : Option<i32> = Some(val + 100) ;
+            return new_value ;
+        }
+        None =>{
+            return None ;
+        }
+    }
+}
+______________________________________________________________
+//learning dereferencing in rust 
+fn main(){
+    let number : i32 = 120 ;
+    let num_ref : &i32 = &number ;
+    println!("The dereferenced value of num as ref is {:?}" , *num_ref) ;
+}
+--this is the basic of dereferencing in rust 
+--not only we can get the value form dref but aslo we can chnage and then read it as well by dref 
+
+
+fn main(){
+    let mut number1 : i32 = 19 ;
+    let r : &mut i32 = &mut number1 ;
+    *r = 10;
+    println!("number 1 has chnaged as {:?}" , number1) ;
+}
+_______________________________________________________________________________
+fn main(){
+    let number: Option<i32> = Some(10) ;
+    let none : Option<i32> = None ;
+    let res1 : Option<i32> = get_it(number.as_ref()) ;
+    let res2 : Option<i32> = get_it(none.as_ref()) ;
+    println!("Result 1 is {:?} and result  2 is {:?}" , res1 , res2) ;
+}
+fn get_it(num : Option<&i32>)-> Option<i32>{
+    match num{
+        Some(val)=>{
+            let direct_value : i32 = *val ;
+            let real_value : Option<i32> = Some(direct_value + 1000) ;
+            return real_value ;
+        }
+        None =>{
+            return None ;
+        }
+    }
+}
+________________________________________________________________________________
+the main thing is what is the diffirence between &Option<i32> vs Option<&i32> ?
+Option<&i32> -------This only take the reference to the value form the option 
+&Option<i32> -------But this take the full reference to the pointed option 
+examples :
+          Option<&i32> = var.as_ref()  ;
+          &Option<i32> = &var ;
 
 
 
